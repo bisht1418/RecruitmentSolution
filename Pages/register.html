@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="../Styles/login.css" />
+  </head>
+  <body>
+    <div class="login_container">
+      <div class="icon">Icon</div>
+      <div class="moto">Workplace Psychological Safety - made simple</div>
+      <div class="text">Register User</div>
+      <div class="form">
+        <form action="" onsubmit="handleSubmit(event)">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Type in Email Address"
+            required
+          />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Type in Password"
+            required
+          />
+          <input type="submit" value="Register" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  const form = document.querySelector("form");
+  let data = JSON.parse(localStorage.getItem("register")) || [];
+
+  form.addEventListener("submit", handleSubmit);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const email = document.querySelector("#email");
+    const password = document.querySelector("#password");
+
+    const userEmail = email.value;
+    const userPassword = password.value;
+
+    const userData = { email: userEmail, password: userPassword };
+    data = [...data, userData];
+
+    localStorage.setItem("register", JSON.stringify(data));
+    alert("Registration successful");
+    window.location.href = "/Pages/login.html";
+  }
+</script>

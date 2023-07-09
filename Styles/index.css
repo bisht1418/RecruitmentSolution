@@ -11,14 +11,11 @@ body {
 .heading {
     background-color: #314c5f;
     display: flex;
-  
     justify-content: flex-end;
-
     height: 3rem;
     position: relative;
     top: 0;
     z-index: 1;
-    
   }
 /* Nav Styling */
 .nav-container {
@@ -42,6 +39,7 @@ body {
 }
 .nav-logo:hover{
     cursor: pointer;
+    color: #314c5f;
 }
 .nav-navigation{
     margin-right: 9rem;
@@ -60,6 +58,11 @@ body {
     padding: 2px;
     display: flex;
     padding: 5px;
+}
+
+.nav-container a{
+  text-decoration: none;
+  color: #314c5f;
 }
 .nav-navigation div:hover{
     cursor: pointer;
@@ -164,18 +167,6 @@ body {
     color: rgb(63, 63, 63);
     font-weight: 200;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   /* Keyframes for fade-in animation */
